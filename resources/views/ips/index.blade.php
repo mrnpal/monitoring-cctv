@@ -82,7 +82,13 @@
                     <span class="connected">Connected</span>
                 @endif
             </td>
-            <td>{{ $ip->updated_at->timezone('Asia/Jakarta')->format('d-m-Y H:i:s') }}</td> <!-- Tampilkan waktu -->
+            <td>
+                @if($ip->updated_at)
+                    {{ $ip->updated_at->timezone('Asia/Jakarta')->format('d-m-Y H:i:s') }}
+                @else
+                    <span>Tidak ada data waktu</span>
+                @endif
+            </td>
             <td>
                 <button onclick="pingIp({{ $ip->id }})">Ping</button>
             </td>
