@@ -12,10 +12,31 @@
             margin: 0;
             padding: 20px;
         }
-        h1 {
-            text-align: center;
-            color: #333;
+        .logo-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        padding: 10px 0;
+        z-index: 1000; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
+        .logo-container img {
+        display: block;
+        margin: 0 auto;
+        max-width: 200px;
+        height: auto;
+        }
+        h1 {
+        font-size: 36px;
+        font-weight: 600;
+        color: #343a40;
+        margin-bottom: 30px;
+        margin-top: 65px;
+        text-align: center;
+        }
+
         table {
             width: 100%;
             border-collapse: collapse;
@@ -62,6 +83,11 @@
     </style>
 </head>
 <body>
+    <div class="container mt-3">
+        <div class="logo-container">
+            <img src="{{ asset('img/logo.png') }}" alt="logo">
+        </div>
+    </div>
     <h1>Monitoring CCTV</h1>
     <table>
         <tr>
