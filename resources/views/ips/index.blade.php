@@ -133,7 +133,7 @@
             });
         }
 
-        // Jalankan ping otomatis setiap 1 menit
+        // Menjalankan ping otomatis
         setInterval(function() {
             $('button').each(function() {
                 $(this).click();
