@@ -50,7 +50,7 @@
             border-bottom: 1px solid #ddd;
         }
         th {
-            background-color: #007BFF;
+            background-color: #5ba2ee;
             color: white;
         }
         tr:hover {
@@ -94,8 +94,10 @@
             <th>IP Address</th>
             <th>Port</th>
             <th>Status</th>
-            <th>Last Updated</th> <!-- Kolom baru untuk waktu terakhir diperbarui -->
+            <th>Location</th>
+            <th>Last Updated</th>
             <th>Action</th>
+
         </tr>
         @foreach($ips as $ip)
         <tr>
@@ -108,6 +110,7 @@
                     <span class="connected">Connected</span>
                 @endif
             </td>
+            <td>{{ $ip->location }}</td>
             <td>
                 @if($ip->updated_at)
                     {{ $ip->updated_at->timezone('Asia/Jakarta')->format('d-m-Y H:i:s') }}
@@ -138,7 +141,7 @@
             $('button').each(function() {
                 $(this).click();
             });
-        }, 60000); // 1 menit = 60.000 milidetik
+        }, 3600000); // 1 menit = 60.000 milidetik
     </script>
 </body>
 </html>
