@@ -1,20 +1,5 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "Dockerfile",
-        "use": "@vercel/docker"
-      }
-    ],
-    "routes": [
-        {
-            "src": "/img/(.*)",
-            "dest": "/public/img/"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
+    "rewrites": [
+      { "source": "/(.*)", "destination": "/" }
     ]
   }
-  
